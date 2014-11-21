@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Consulta de clientes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="config.css"/>
+    </head>
+    <body id="formulario">
+        <form method="post" action="Controle">
+            <input type="hidden" name="flag" value="consultarcliente"/>
+            <table>
+                <tr>
+                    <td>
+                        <label for="cpf">   CPF </label>
+                    </td>
+                    <td>
+                        <input type="search" id="cpf" size="50" name="cpf" maxlength="50" />
+                        <input type="submit" value="Buscar cliente!" class="bot" />
+                    </td>
+                </tr>
+            </table>         
+        </form>
+    </body>
+</html>
