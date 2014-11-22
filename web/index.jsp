@@ -1,36 +1,11 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-BR" class="no-js"><!-- A classe 'no-js' é reconhecida pelo javascript modernizr, permitindo que browsers antigos reconheçam corretamente nossas tags -->
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Importante para habilitar os recursos de Responsividade em conjunto com o CSS -->
-
-        <title>:: Fênix Suporte ::</title>
-        <script src="js/jquery-1.8.1.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <script src="js/modernizr-2.6.1.min.js"></script>
-        <script type="text/javascript" src="jquery-1.11.0.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#myCarouselol").hide();
-                $(".prev-slide").click(function () {
-                    $("#myCarousel").carousel('prev');
-                });
-                $(".next-slide").click(function () {
-                    $("#myCarousel").carousel('next');
-                });
-            });
-        </script>   
-
-
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/main.css">
-
-        <!-- Declaração de arquivos conforme aula de Aplicações dinamicas 
-        <script type="text/javascript" src="jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="scripts.js"></script>
-        <link rel="stylesheet" type="text/css" href="estilos.css" /> -->
-
-        <style type="text/css">
+    <head>        
+        <title>Fênix Suporte</title>
+        <jsp:include flush="true" page="cabecalho.jsp" />
+        <link href="css/carousel.css" rel="stylesheet" type="text/css"/>
+        <!--<style type="text/css">
             h2{
                 margin: 0;     
                 color: #666;
@@ -55,7 +30,7 @@
                 margin-left: auto;
                 margin-right: auto;                          
             }
-        </style>
+        </style>-->
     </head>
     <body>
 
@@ -67,61 +42,8 @@
 
         <!-- Início da barra de navegação -->
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container-fluid">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="index.html">Fênix Suporte</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
+        <jsp:include flush="true" page="topmenu.jsp" />
 
-
-                            <li class="active"><a href="index.html" title="Página inicial">Home</a></li>
-                            <li><a href="quemsomos.jsp" title="" rel="">Quem somos</a></li>
-                            <li><a href="servicos.jsp" title="" rel="">Serviços</a></li>
-                            <!-- SOMENTE DISPONIVEL PARA CADASTRADOS
-                             <li><a href="download.jsp" title="" rel="">Download</a></li>
-                             <li><a href="tutoriais.jsp" title="" rel="">Tutoriais</a></li> -->
-                            <li><a href="noticias.jsp" title="Noticias" rel="">Noticias</a></li>
-                            <li><a href="faleconosco.jsp" title="#">Fale conosco</a></li>
-                            <li><a href="http://twitter.com/" target="_blank"><img src="img/tw.png" width="26" height="26" alt="TWITTER" title="twitter.com/" /></a></li>
-                            <li><a href="http://www.facebook.com//" target="_blank"><img src="img/facebook1.png" width="26" height="26" alt="FACEBOOK" title="facebook.com/" /></a></li>
-                            <li><a href="" target="_blank"><img src="img/android1.png" width="80" height="80" alt="android" title="Fenixapp/" /></a></li>
-                            <li><form role="search" class="navbar-form navbar-left">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="O que você procura?" class="form-control">
-                                    </div>
-                                </form></li>
-
-                            <li class="dropdown" id="menu1">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
-                                    Login
-                                    <b class="caret"></b>
-                                </a>
-                                <div class="dropdown-menu">
-                                    <form style="margin: 0px" accept-charset="UTF-8" action="login.jsp" method="post">
-                                        <div style="margin:0;padding:0;display:inline">
-                                            <input name="utf8" type="hidden" value="&#x2713;" />
-                                            <input name="authenticity_token" type="hidden" value="4L/A2ZMYkhTD3IiNDMTuB/fhPRvyCNGEsaZocUUpw40=" /></div>
-                                        <fieldset class='textbox' style="padding:10px">
-                                            <input style="margin-top: 8px" type="text" name="email" placeholder="Email" />
-                                            <input style="margin-top: 8px" type="password" name="senha"  placeholder="Senha" />
-                                            <input type="submit" name="entrar" value="Entrar" class="btn">
-                                            <a class="btn" href="cadastrocliente.html">Cadastrar-se</a>
-
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </div>
-            </div>
-        </div>
         <div align="center" class="bs-example">
             <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
                 <!-- Carousel indicators -->
@@ -167,10 +89,10 @@
                 </a>
             </div>
         </div>
-        <!-- Início do container para a classe 'hero-unit' -->
-        <div class="container-fluid hero">
+        <!-- Início do container para a classe 'jumbotron' -->
+        <div class="container hero">
             <!-- Hero unit para o showcase -->
-            <div class="hero-unit">
+            <div class="jumbotron">
                 <h1>Confira nossos planos</h1>
                 <br />
                 <p>Os melhores profissionais ajudam você a simplificar sua navegação:</p>
@@ -189,22 +111,22 @@
         </div> <!-- /container hero -->
         <!-- Aqui colocaremos nosso container e uma linha com 3 colunas -->
         <div class="container-fluid">
-            <div class="row-fluid">
-                <div class="span4">
+            <div class="row">
+                <div class="col-md-4">
                     <h1>Veja a lista das redes sociais mais acessadas no Brasil</h1>
                     <p>A ComScore, tradicional consultoria de análise de internet, revelou novos números sobre os hábitos dos brasileiros em redes sociais, mostrando as mais acessadas. Sem surpresas, o Facebook é o serviço mais acessado, mas a lista traz uma revelação interessante: o LinkedIn, rede voltada para contatos profissionais, ficou em 2º e superou o Twitter, rede com mais apelo popular.
                         A metodologia aplicada no estudo pode ter causado uma distorção no resultado, no entanto. A empresa é respeitada, mas seu levantamento considera apenas internautas com 15 anos ou mais que utilizam computador e laptop em casa ou no trabalho. Exclui, portanto, os acessos realizados via smartphones e tablets e conexões em ambientes externos como lan-houses e bibliotecas públicas. 
                     </p>
-                    <p><a class="btn" href="noticias.jsp" title="">Leia mais &raquo;</a></p>
+                    <p><a class="btn btn-link" href="noticias.jsp" title="">Leia mais &raquo;</a></p>
                 </div>
-                <div class="span4">
+                <div class="col-md-4">
                     <h1>Só o antivírus não é suficiente: aprenda a se proteger melhor na internet</h1>
                     <p>Foi-se o tempo em que um bom antivírus era tudo o que precisávamos para navegar tranquilamente na internet.  Leandro Matovam, CEO da AVG Brasil, diz que "o antivírus é essencial, mas não é a única coisa a se fazer".
                         Cláudio Martinelli, gerente de varejo da Kaspersky, explica que nem tudo é vírus: "Para falar a verdade, muitas das pragas digitais, fraudes e tentativas de invasão que conhecemos não são o que podemos chamar de vírus. Às vezes, não estão nem dentro da máquina do usuário". Ele explica que muitas vezes, essas ameaças ficam em sites falsos da internet. Aqui, o antivírus sozinho não tem capacidade de identificar o perigo.
                     </p>
-                    <p><a class="btn" href="noticias.jsp" title="">Leia mais &raquo;</a></p>
+                    <p><a class="btn btn-link" href="noticias.jsp" title="">Leia mais &raquo;</a></p>
                 </div>
-                <div class="span4">
+                <div class="col-md-4">
                     <h1>Hackers revelam as 8 falhas de segurança mais graves do ano</h1>
                     <p>A conferência DefCon, focada em segurança computacional, começou ontem nos Estados Unidos e reúne hackers e fabricantes de antivírus. Nesta sexta-feira, os participantes do evento divulgaram uma lista com as 8 falhas de segurança consideradas por eles as mais graves do ano. 
                         Um tipo de drive externo específico para ser utilizado em redes locais, os NAS (Network Attached Storage) são úteis para armazenamento compartilhado, mas,de acordo com o analista de segurança Jacob Holcomb, após um teste com 50 modelos diferentes, nenhum deles possuía segurança suficiente que não fosse burlada. O teste foi feito em 2013 e os resultados, demonstrados em uma palestra neste ano.
@@ -215,8 +137,8 @@
         </div> <!-- /container 2-->
 
         <div class="container-fluid rodape">
-            <div class="row-fluid">
-                <div class="span3 footer">
+            <div class="row">
+                <div class="col-md-3 footer">
                     <h4>Menu</h4>
                     <ul>
                         <li><a href="index.html" title="Home" rel="nofollow">Home</a></li>
@@ -226,35 +148,47 @@
                         <li><a href="faleconosco.jsp" title="Fale conosco" rel="nofollow">Fale conosco</a></li>
                     </ul>
                 </div>
-                <div class="span3 footer">
+                <div class="col-md-3 footer">
                     <h4>Informações gerais</h4>
                     <ul>
                         <li><a href="" title="Termos de uso" rel="nofollow">Termos de uso</a></li>
                         <li><a href="" title="Mapa do site" rel="nofollow">Mapa do site</a></li>
                     </ul>
                 </div>
-                <div class="span3 footer">
+                <div class="col-md-3 footer">
                     <h4>Redes Sociais</h4>
                     <ul class="list-inline social-media">
                         <li><a href="http://twitter.com/" target="_blank"><img src="img/tw.png" width="26" height="26" alt="TWITTER" title="twitter.com/" /></a></li>
                         <li><a href="http://www.facebook.com//" target="_blank"><img src="img/facebook1.png" width="26" height="26" alt="FACEBOOK" title="facebook.com/" /></a></li>
                     </ul>
                 </div>
-                <div class="span3 footer">
+                <div class="col-md-3 footer">
                     <h4>Citação da semana</h4>
                     <cite class="pull-right">"Dá-se muita atenção ao custo de se realizar algo. E nenhuma ao custo de não realizá-lo."<br />Philip Kotler</cite>
                 </div>
             </div>
         </div>
-        <div class="container-fluid copyright">
-            <footer>
+        <div class="copyright">
+            <footer class="footer">
                 <p><a href="#" title="#">&copy; 2014 Fênix Suporte</a></p>
             </footer>
         </div>
+        <jsp:include flush="true" page="footer.jsp" />
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#myCarouselol").hide();
+                $(".prev-slide").click(function() {
+                    $("#myCarousel").carousel('prev');
+                });
+                $(".next-slide").click(function() {
+                    $("#myCarousel").carousel('next');
+                });
+            });
+        </script>   
         <!-- Script para o Google Analytics   -->     
         <script>
             var _gaq = [['_setAccount', 'xxxxxxxxxxxxxx'], ['_trackPageview']];
-            (function (d, t) {
+            (function(d, t) {
                 var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
                 g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
                 s.parentNode.insertBefore(g, s)

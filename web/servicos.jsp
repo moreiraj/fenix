@@ -1,40 +1,11 @@
 <!DOCTYPE html>
-
-<html>  
+<html lang="pt-br">  
     <head> 
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Serviços</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/modernizr-2.6.1.min.js"></script>                     
-        <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <jsp:include flush="true" page="cabecalho.jsp" />
     </head>
     <body>  
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html" title="Página inicial">Fênix Suporte</a>                    
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">                            
-                        <li><a href="quemsomos.jsp" title="" rel="">Quem Somos</a></li>
-                        <li><a href="servicos.jsp" title="" rel="">Serviços</a></li>
-                        <li><a href="noticias.jsp" title="Noticias" rel="">Noticias</a></li>
-                        <!-- SOMENTE DISPONIVEL PARA CADASTRADOS
-                        
-                        <li><a href="download.jsp" title="" rel="">Download</a></li>
-                        <li><a href="tutoriais.jsp" title="" rel="">Tutoriais</a></li> -->
-
-
-                        <li><a href="faleconosco.jsp" title="">Fale conosco</a></li>
-                    </ul>
-                </div><!--/.navbar-collapse -->
-            </div>
-        </nav>
+        <jsp:include flush="true" page="topmenu.jsp" />
         <div class="container">
             <div class="row">
                 <div class="col-md-4">    
@@ -104,10 +75,7 @@
                          <p><a href="cadastrocliente.html">Assine já¡</a></p></td>
                  </tr>
              </table> 
-
-
-
         -->
-
+        <jsp:include flush="true" page="footer.jsp" />
     </body>
 </html>
